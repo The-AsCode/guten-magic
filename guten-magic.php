@@ -12,3 +12,20 @@
  * Requires PHP: 7.2
  *
  */
+
+ if( ! defined( 'ABSPATH' ) ) {
+    exit;
+ }
+
+
+ final class Guten_Magic {
+    public function __construct() {
+        add_action( 'enqueue_block_editor_assets', array( $this, 'guten_magic_block_assets' ) );
+    }
+
+    public function guten_magic_block_assets() {
+        wp_enqueue_script( 'guten-magic-block', plugin_dir_url(__FILE__) . 'build/index.js', array('wp-blocks', 'wp-element'));
+    }
+ }
+
+ new Guten_Magic();
