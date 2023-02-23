@@ -6,11 +6,10 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
+    "start:basic-info": "wp-scripts start src/blocks/basic-info/index.js --output-path=build/basic-info",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "adnan",
-  "license": "ISC",
-  "devDependencies": {
-    "@wordpress/scripts": "^25.4.0"
-  }
+  "license": "ISC"
 }
