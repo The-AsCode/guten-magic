@@ -7,6 +7,7 @@
     "build": "wp-scripts build",
     "start": "wp-scripts start",
     "start:basic-info": "wp-scripts start src/blocks/basic-info/index.js --output-path=build/basic-info",
+    "start:testemonial": "wp-scripts start src/blocks/testemonial/index.js --output-path=build/testemonial",
 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
