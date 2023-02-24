@@ -90,7 +90,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
-wp.blocks.registerBlockType('guten-magic/basic-info-data', {
+wp.blocks.registerBlockType('guten-magic/testimonial', {
   title: 'Testemonial',
   icon: 'admin-plugins',
   edit: function () {

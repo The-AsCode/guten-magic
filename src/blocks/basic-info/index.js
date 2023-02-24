@@ -3,7 +3,7 @@ import Save from "./save";
 
 wp.blocks.registerBlockType('guten-magic/basic-info-data', {
     title: 'Basic Info',
-    icon: 'dashicons-admin-plugins',
+    icon: 'admin-plugins',
     edit: function(){
         return <Edit />;
     },

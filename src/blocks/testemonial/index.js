@@ -1,4 +1,4 @@
-wp.blocks.registerBlockType('guten-magic/basic-info-data', {
+wp.blocks.registerBlockType('guten-magic/testimonial', {
     title: 'Testemonial',
     icon: 'admin-plugins',
     edit: function(){

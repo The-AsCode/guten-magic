@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import './editor.scss'
 
 export default function Edit() {
   return (
-    <div>Hello from edit</div>
+    <div className='test'>Hello from edit</div>
   )
 }
