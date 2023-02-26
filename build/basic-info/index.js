@@ -21,9 +21,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Edit() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "test"
-  }, "Hello from edit");
+  const [basicInfo, setBasicInfo] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    fname: '',
+    lname: '',
+    address: ''
+  });
+  const handleChange = e => {
+    const {
+      name,
+      value
+    } = e.target;
+    setBasicInfo(prevInfo => ({
+      ...prevInfo,
+      [name]: value
+    }));
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Bio"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "First Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "fname",
+    value: basicInfo.fname,
+    onChange: handleChange
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Last Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "lname",
+    value: basicInfo.lname,
+    onChange: handleChange
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Address:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "address",
+    value: basicInfo.address,
+    onChange: handleChange
+  }))));
 }
 
 /***/ }),
