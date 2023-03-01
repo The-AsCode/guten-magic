@@ -25,7 +25,7 @@
 
     public function guten_magic_block_assets() {
         wp_enqueue_script( 'guten-magic-block', plugin_dir_url(__FILE__) . 'build/index.js', array('wp-blocks', 'wp-element') );
-        wp_enqueue_script( 'guten-magic-basic-info', plugin_dir_url(__FILE__) . 'build/basic-info/index.js', array('wp-blocks', 'wp-element') );
+        wp_enqueue_script( 'guten-magic-basic-info', plugin_dir_url(__FILE__) . 'build/basic-info/index.js', [], false, true );
         wp_enqueue_script( 'guten-magic-testemonial', plugin_dir_url(__FILE__) . 'build/testemonial/index.js', array('wp-blocks', 'wp-element'));
 
         wp_enqueue_style( 'guten-magic-basic-info-css', plugin_dir_url(__FILE__) . 'build/basic-info/index.css' );

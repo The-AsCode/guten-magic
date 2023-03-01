@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { TextControl, TextHighlight } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import './editor.scss'
 
 export default function Edit() {
@@ -10,12 +11,14 @@ export default function Edit() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    // const { name, value } = e.target;
 
-    setBasicInfo((prevInfo) => ({
-      ...prevInfo,
-      [name]: value
-    }));
+    console.log(e.target.name);
+
+    // setBasicInfo((prevInfo) => ({
+    //   ...prevInfo,
+    //   [name]: value
+    // }));
 
   }
 
@@ -36,6 +39,25 @@ export default function Edit() {
             <input type="text" name="address" value={basicInfo.address} onChange={handleChange}/>
           </label>          
       </form>
+
+      {/* <TextControl
+        label="First Name:"
+        name="fname" 
+        value={basicInfo.fname} 
+        onChange={handleChange}
+      />
+      <TextControl
+        label="Last Name:"
+        name="lname" 
+        value={basicInfo.lname} 
+        onChange={handleChange}
+      />
+      <TextControl
+        label="Address:"
+        name="address" 
+        value={basicInfo.address} 
+        onChange={handleChange}
+      /> */}
     </div>
   )
 }
