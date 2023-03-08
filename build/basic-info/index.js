@@ -121,7 +121,6 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
       setAttributes({
         basicInfoData: basicInfo
       });
-      console.log(attributes.basicInfoData);
     };
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Bio"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "First Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
       type: "text",
@@ -147,7 +146,7 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
     const {
       basicInfoData
     } = attributes;
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "First Name: ", basicInfoData.fname), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Last Name: ", basicInfoData.lname));
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "First Name: ", basicInfoData.fname), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Last Name: ", basicInfoData.lname), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Address: ", basicInfoData.address));
   }
 });
 }();
