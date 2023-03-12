@@ -2,6 +2,72 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/basic-info/edit.js":
+/*!***************************************!*\
+  !*** ./src/blocks/basic-info/edit.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/basic-info/editor.scss");
+
+
+
+function Edit(props) {
+  console.log(props);
+  const [basicInfo, setBasicInfo] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    fname: '',
+    lname: '',
+    address: ''
+  });
+  const handleChange = e => {
+    const {
+      name,
+      value
+    } = e.target;
+    setBasicInfo(prevInfo => ({
+      ...prevInfo,
+      [name]: value
+    }));
+    props.basicInfo(basicInfo);
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Bio"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "First Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "fname",
+    value: props.attributes.basicInfoData.fname,
+    onChange: handleChange
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Last Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "lname",
+    value: props.attributes.basicInfoData.lname,
+    onChange: handleChange
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Address:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "address",
+    value: props.attributes.basicInfoData.address,
+    onChange: handleChange
+  }))));
+}
+
+/***/ }),
+
+/***/ "./src/blocks/basic-info/editor.scss":
+/*!*******************************************!*\
+  !*** ./src/blocks/basic-info/editor.scss ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -89,6 +155,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/blocks/basic-info/edit.js");
+
 
 
 wp.blocks.registerBlockType('guten-magic/basic-info-data', {
@@ -104,40 +172,15 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
       attributes,
       setAttributes
     } = _ref;
-    const [basicInfo, setBasicInfo] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      fname: '',
-      lname: '',
-      address: ''
-    });
-    const handleChange = e => {
-      const {
-        name,
-        value
-      } = e.target;
-      setBasicInfo(prevInfo => ({
-        ...prevInfo,
-        [name]: value
-      }));
+    const handleNewBasicInfo = newBasicInfo => {
       setAttributes({
-        basicInfoData: basicInfo
+        basicInfoData: newBasicInfo
       });
     };
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Bio"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "First Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      name: "fname",
-      value: basicInfo.fname,
-      onChange: handleChange
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Last Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      name: "lname",
-      value: basicInfo.lname,
-      onChange: handleChange
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Address:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-      type: "text",
-      name: "address",
-      value: basicInfo.address,
-      onChange: handleChange
-    }))));
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_edit__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      basicInfo: handleNewBasicInfo,
+      attributes: attributes
+    }));
   },
   save: function (_ref2) {
     let {
@@ -146,7 +189,8 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
     const {
       basicInfoData
     } = attributes;
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "First Name: ", basicInfoData.fname), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Last Name: ", basicInfoData.lname), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Address: ", basicInfoData.address));
+    console.log(basicInfoData);
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "First Name: ", basicInfoData.fname, " "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Last Name: ", basicInfoData.lname, " "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Address: ", basicInfoData.address, " "));
   }
 });
 }();
