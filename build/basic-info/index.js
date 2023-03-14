@@ -19,7 +19,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Edit(props) {
-  console.log(props);
+  const {
+    fname,
+    lname,
+    address
+  } = props.attributes.basicInfoData;
   const [basicInfo, setBasicInfo] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
     fname: '',
     lname: '',
@@ -39,17 +43,17 @@ function Edit(props) {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Bio"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "First Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
     name: "fname",
-    value: props.attributes.basicInfoData.fname,
+    value: fname,
     onChange: handleChange
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Last Name:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
     name: "lname",
-    value: props.attributes.basicInfoData.lname,
+    value: lname,
     onChange: handleChange
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Address:", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
     name: "address",
-    value: props.attributes.basicInfoData.address,
+    value: address,
     onChange: handleChange
   }))));
 }
@@ -164,7 +168,12 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
   icon: 'admin-plugins',
   attributes: {
     basicInfoData: {
-      type: 'object'
+      type: 'object',
+      default: {
+        fname: '',
+        lname: '',
+        address: ''
+      }
     }
   },
   edit: function (_ref) {
@@ -189,7 +198,6 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
     const {
       basicInfoData
     } = attributes;
-    console.log(basicInfoData);
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "First Name: ", basicInfoData.fname, " "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Last Name: ", basicInfoData.lname, " "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Address: ", basicInfoData.address, " "));
   }
 });

@@ -3,7 +3,7 @@ import './editor.scss'
 
 export default function Edit( props ) {
     
-    console.log(props);
+    const {fname, lname, address} = props.attributes.basicInfoData;
 
     const [ basicInfo, setBasicInfo ] = useState({
         fname: '',
@@ -26,15 +26,15 @@ export default function Edit( props ) {
           <form>
               <label>
                 First Name:
-                <input type="text" name="fname" value={props.attributes.basicInfoData.fname} onChange={handleChange}/>
+                <input type="text" name="fname" value={fname}  onChange={handleChange}/>
               </label>
               <label>
                 Last Name:
-                <input type="text" name="lname" value={props.attributes.basicInfoData.lname} onChange={handleChange}/>
+                <input type="text" name="lname" value={lname} onChange={handleChange}/>
               </label>
               <label>
                 Address:
-                <input type="text" name="address" value={props.attributes.basicInfoData.address} onChange={handleChange}/>
+                <input type="text" name="address" value={address} onChange={handleChange}/>
               </label>          
           </form>
         </div>

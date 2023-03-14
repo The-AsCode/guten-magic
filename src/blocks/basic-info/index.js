@@ -6,7 +6,12 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
     icon: 'admin-plugins',
     attributes: {
         basicInfoData: {
-            type: 'object'
+            type: 'object',
+            default:{
+              fname:'',
+              lname:'',
+              address:''
+            }
         },
     },
 
@@ -24,7 +29,6 @@ wp.blocks.registerBlockType('guten-magic/basic-info-data', {
 
     save: function({ attributes }) {
         const { basicInfoData } = attributes;
-        console.log(basicInfoData);
         return(
             <div>
                 <h3>First Name: {basicInfoData.fname} </h3>
